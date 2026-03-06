@@ -1,0 +1,237 @@
+.chatbot-page {
+  background-color: #f3f4f6;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot-body {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+/* --- Header Chat --- */
+.chat-header {
+  background: linear-gradient(135deg, #00695c 0%, #00897b 100%); /* Teal gradient */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.chat-header p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.btn-close-chat {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.btn-close-chat:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+/* --- Cửa sổ tin nhắn --- */
+.chat-window {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 80%;
+}
+
+.message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message.bot {
+  align-self: flex-start;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+.message.bot .avatar {
+  background-color: #00695c; /* Teal */
+}
+
+.message.user .avatar {
+  background-color: #2c3e50;
+}
+
+.bubble {
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.message.bot .bubble {
+  background-color: white;
+  border-bottom-left-radius: 4px;
+  color: #333;
+}
+
+.message.user .bubble {
+  background-color: #00695c; /* Teal */
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.bubble.typing {
+  font-style: italic;
+  color: #888;
+  font-size: 13px;
+}
+
+/* --- Khu vực nhập liệu --- */
+.chat-input-area {
+  padding: 20px;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+.chat-input-area input:focus {
+  border-color: #00695c;
+}
+
+.chat-input-area button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #00695c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.chat-input-area button:hover {
+  background: #004d40;
+}
+
+/* --- CSS CHO NỘI DUNG MARKDOWN --- */
+.bubble p {
+  margin: 5px 0;
+}
+
+.bubble p:first-child {
+  margin-top: 0;
+}
+
+.bubble p:last-child {
+  margin-bottom: 0;
+}
+
+.bubble ul, .bubble ol {
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.bubble li {
+  list-style: disc;
+  margin-bottom: 5px;
+}
+
+.bubble strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+  .chatbot-body {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .chat-container {
+    height: 80vh;
+    border-radius: 10px;
+  }
+
+  .chat-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .chat-input-area input {
+    font-size: 14px;
+  }
+}

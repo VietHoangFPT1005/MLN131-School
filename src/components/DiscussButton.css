@@ -1,0 +1,48 @@
+.discuss-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e6a817, #c69500);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  font-size: 19px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(230, 168, 23, 0.5);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.discuss-label {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-top: -1px;
+  text-transform: uppercase;
+}
+
+.discuss-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(230, 168, 23, 0.7);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .discuss-btn {
+    bottom: 80px;
+    right: 15px;
+    width: 48px;
+    height: 48px;
+    font-size: 17px;
+  }
+}

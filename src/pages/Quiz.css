@@ -1,0 +1,541 @@
+/* --- GAME CONTAINER --- */
+.quiz-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e0f2f1 0%, #00897b 50%, #004d40 100%);
+  overflow: hidden;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: -85px;
+  padding-top: 100px;
+  z-index: 0;
+}
+
+.ambient-glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(230, 168, 23, 0.15) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- GAME UI --- */
+.quiz-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 20px;
+}
+
+.game-progress-track {
+  width: 90%;
+  max-width: 800px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-bottom: 40px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.progress-icon {
+  position: absolute;
+  top: -20px;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+  transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.dove-moving {
+  font-size: 30px;
+  color: #ffffff;
+  animation: float 3s ease-in-out infinite;
+}
+
+.flag-icon {
+  position: absolute;
+  right: -15px;
+  top: -35px;
+  font-size: 35px;
+  color: #e6a817;
+}
+
+/* --- KHUNG CÂU HỎI --- */
+.quiz-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 750px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: 4px solid #fff;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.lives {
+  color: #e74c3c;
+  display: flex;
+  gap: 5px;
+}
+
+.score-board {
+  color: #00695c;
+  background: #e0f2f1;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.question-text {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.answer-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.answer-btn {
+  padding: 20px;
+  font-size: 1.1rem;
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.answer-btn:hover {
+  background-color: #e0f2f1;
+  border-color: #00897b;
+  transform: translateY(-2px);
+}
+
+.answer-btn.correct {
+  background-color: #d4edda !important;
+  border-color: #28a745 !important;
+  color: #155724;
+}
+
+.answer-btn.wrong {
+  background-color: #f8d7da !important;
+  border-color: #dc3545 !important;
+  color: #721c24;
+}
+
+/* --- MÀN HÌNH WELCOME & KẾT QUẢ --- */
+.welcome-section, .score-section {
+  text-align: center;
+  color: #333;
+}
+
+.welcome-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* --- BUTTONS --- */
+.welcome-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.btn-start, .btn-restart, .btn-home, .btn-leaderboard {
+  border: none;
+  padding: 15px 30px;
+  color: white;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-start {
+  background: linear-gradient(to right, #00897b, #004d40);
+  box-shadow: 0 5px 15px rgba(0, 105, 92, 0.4);
+}
+
+.btn-restart {
+  background: linear-gradient(to right, #00897b, #004d40);
+  box-shadow: 0 5px 15px rgba(0, 105, 92, 0.4);
+}
+
+.btn-home {
+  background: linear-gradient(to right, #546e7a, #37474f);
+  box-shadow: 0 5px 15px rgba(84, 110, 122, 0.4);
+}
+
+.btn-leaderboard {
+  background: linear-gradient(to right, #e6a817, #c69500);
+  box-shadow: 0 5px 15px rgba(230, 168, 23, 0.4);
+}
+
+.btn-start:hover, .btn-restart:hover, .btn-home:hover, .btn-leaderboard:hover {
+  transform: scale(1.05);
+}
+
+.score-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* ============================= */
+/* --- SAVE SCORE SECTION --- */
+/* ============================= */
+.save-score-section {
+  margin: 25px 0 10px;
+  padding: 20px;
+  background: #f0faf8;
+  border-radius: 15px;
+  border: 2px dashed #00897b;
+}
+
+.save-score-section h3 {
+  color: #00695c;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.save-score-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.name-input {
+  padding: 12px 20px;
+  border: 2px solid #b2dfdb;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  width: 250px;
+  max-width: 100%;
+  transition: border-color 0.3s;
+  text-align: center;
+}
+
+.name-input:focus {
+  border-color: #00695c;
+  box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.15);
+}
+
+.name-input::placeholder {
+  color: #999;
+}
+
+.btn-save {
+  padding: 12px 25px;
+  background: linear-gradient(to right, #00897b, #004d40);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-save:hover {
+  transform: scale(1.05);
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.save-error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.save-hint {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.save-success {
+  margin: 20px 0;
+  padding: 12px 20px;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ============================= */
+/* --- LEADERBOARD SECTION --- */
+/* ============================= */
+.leaderboard-section {
+  text-align: center;
+  color: #333;
+}
+
+.leaderboard-header {
+  margin-bottom: 25px;
+}
+
+.leaderboard-header .trophy-icon {
+  font-size: 50px;
+  color: #e6a817;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 3px 6px rgba(230, 168, 23, 0.4));
+}
+
+.leaderboard-header h2 {
+  font-size: 1.8rem;
+  color: #00695c;
+  margin: 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.leaderboard-header p {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+/* Loading */
+.loading-spinner {
+  padding: 40px;
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e0f2f1;
+  border-top: 4px solid #00695c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-board {
+  padding: 40px 20px;
+  text-align: center;
+  color: #999;
+}
+
+.empty-board p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.lb-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px 80px;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.lb-row:hover:not(.lb-header-row) {
+  background: #f0faf8;
+}
+
+.lb-header-row {
+  background: #00695c;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lb-header-row:hover {
+  background: #00695c !important;
+}
+
+/* Top 3 Rows */
+.lb-top-1 {
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.08) 0%, transparent 100%);
+  border-left: 4px solid #ffd700;
+}
+
+.lb-top-2 {
+  background: linear-gradient(90deg, rgba(192, 192, 192, 0.08) 0%, transparent 100%);
+  border-left: 4px solid #c0c0c0;
+}
+
+.lb-top-3 {
+  background: linear-gradient(90deg, rgba(205, 127, 50, 0.08) 0%, transparent 100%);
+  border-left: 4px solid #cd7f32;
+}
+
+.lb-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.rank-icon {
+  font-size: 22px;
+}
+
+.rank-icon.gold { color: #ffd700; }
+.rank-icon.silver { color: #c0c0c0; }
+.rank-icon.bronze { color: #cd7f32; }
+
+.rank-number {
+  width: 28px;
+  height: 28px;
+  background: #e0f2f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #00695c;
+  font-weight: 700;
+}
+
+.lb-name {
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+  padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lb-score {
+  font-weight: 700;
+  color: #00695c;
+  font-size: 1.05rem;
+}
+
+.lb-lives {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ============================= */
+/* --- RESPONSIVE --- */
+/* ============================= */
+@media (max-width: 768px) {
+  .answer-section {
+    grid-template-columns: 1fr;
+  }
+  .question-text { font-size: 1.1rem; }
+  .dove-moving { font-size: 22px; }
+
+  .lb-row {
+    grid-template-columns: 45px 1fr 70px 60px;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .lb-header-row {
+    font-size: 0.75rem;
+  }
+
+  .name-input {
+    width: 200px;
+  }
+
+  .btn-start, .btn-restart, .btn-home, .btn-leaderboard {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .leaderboard-header h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lb-row {
+    grid-template-columns: 40px 1fr 60px;
+  }
+
+  .lb-lives {
+    display: none; /* Ẩn cột mạng trên mobile nhỏ */
+  }
+
+  .lb-header-row .lb-lives {
+    display: none;
+  }
+
+  .save-score-form {
+    flex-direction: column;
+  }
+
+  .name-input {
+    width: 100%;
+  }
+}
