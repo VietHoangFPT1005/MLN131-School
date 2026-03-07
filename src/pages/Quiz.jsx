@@ -234,6 +234,231 @@ const Quiz = () => {
         { answerText: 'D. Tinh thần thượng võ.', isCorrect: false },
       ],
     },
+    {
+      questionText: 'Câu 26: Theo quan điểm của chủ nghĩa Mác - Lênin, nguồn gốc nhận thức của tôn giáo là do đâu?',
+      answerOptions: [
+        { answerText: 'A. Do sự nghèo đói và áp bức bóc lột của giai cấp thống trị.', isCorrect: false },
+        { answerText: 'B. Do sự giới hạn của nhận thức và việc tuyệt đối hóa một mặt của quá trình nhận thức.', isCorrect: true },
+        { answerText: 'C. Do nhu cầu tự nhiên và bản năng sinh tồn của con người.', isCorrect: false },
+        { answerText: 'D. Do sự phát triển của khoa học và kỹ thuật.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 27: Theo chủ nghĩa Mác - Lênin, tôn giáo có chức năng cơ bản nào sau đây?',
+      answerOptions: [
+        { answerText: 'A. Chức năng đền bù hư ảo.', isCorrect: true },
+        { answerText: 'B. Chức năng thúc đẩy sự phát triển của lực lượng sản xuất.', isCorrect: false },
+        { answerText: 'C. Chức năng xóa bỏ giai cấp bóc lột.', isCorrect: false },
+        { answerText: 'D. Chức năng quản lý hành chính xã hội.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 28: Tính chính trị của tôn giáo xuất hiện từ khi nào?',
+      answerOptions: [
+        { answerText: 'A. Ngay từ khi con người mới xuất hiện trên Trái Đất.', isCorrect: false },
+        { answerText: 'B. Từ khi tôn giáo sơ khai xuất hiện trong xã hội cộng sản nguyên thủy.', isCorrect: false },
+        { answerText: 'C. Khi xã hội phân chia giai cấp và có sự đối kháng giai cấp.', isCorrect: true },
+        { answerText: 'D. Khi chủ nghĩa tư bản chuyển sang giai đoạn đế quốc chủ nghĩa.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 29: Nguyên tắc cốt lõi của chủ nghĩa Mác - Lênin trong việc giải quyết vấn đề tôn giáo là gì?',
+      answerOptions: [
+        { answerText: 'A. Phải dùng bạo lực để xóa bỏ ngay lập tức mọi tôn giáo.', isCorrect: false },
+        { answerText: 'B. Giải quyết vấn đề tôn giáo phải gắn liền với quá trình cải tạo xã hội cũ, xây dựng xã hội mới.', isCorrect: true },
+        { answerText: 'C. Tuyệt đối cấm các đảng viên tham gia hoạt động tôn giáo dưới mọi hình thức.', isCorrect: false },
+        { answerText: 'D. Nâng tôn giáo lên thành hệ tư tưởng thống trị để dễ quản lý.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 30: Sự khác biệt cơ bản giữa "Tôn giáo" và "Tín ngưỡng" thường được biểu hiện ở điểm nào?',
+      answerOptions: [
+        { answerText: 'A. Tín ngưỡng chỉ có ở phương Đông, còn tôn giáo có ở phương Tây.', isCorrect: false },
+        { answerText: 'B. Tín ngưỡng là mê tín dị đoan, còn tôn giáo là khoa học.', isCorrect: false },
+        { answerText: 'C. Tôn giáo thường có hệ thống giáo lý, giáo luật và tổ chức giáo hội chặt chẽ; còn tín ngưỡng thì không hoặc chưa có hệ thống chặt chẽ như vậy.', isCorrect: true },
+        { answerText: 'D. Tín ngưỡng thờ thần linh, còn tôn giáo thờ tổ tiên.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 31: Đặc điểm nổi bật nhất của bức tranh tôn giáo tại Việt Nam là gì?',
+      answerOptions: [
+        { answerText: 'A. Việt Nam là quốc gia đa tôn giáo, các tôn giáo chung sống hòa bình và đan xen lẫn nhau.', isCorrect: true },
+        { answerText: 'B. Việt Nam chỉ có các tôn giáo ngoại nhập, không có tôn giáo nội sinh.', isCorrect: false },
+        { answerText: 'C. Thường xuyên xảy ra các cuộc xung đột và chiến tranh tôn giáo.', isCorrect: false },
+        { answerText: 'D. Có một tôn giáo được quy định làm quốc đạo (tôn giáo chính thức của quốc gia).', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 32: Ngoài đạo Cao Đài, tôn giáo nào sau đây là tôn giáo nội sinh ra đời tại miền Nam Việt Nam vào nửa đầu thế kỷ XX (Năm 1939)?',
+      answerOptions: [
+        { answerText: 'A. Đạo Tin Lành.', isCorrect: false },
+        { answerText: 'B. Phật giáo Hòa Hảo.', isCorrect: true },
+        { answerText: 'C. Phật giáo Nam tông Khmer.', isCorrect: false },
+        { answerText: 'D. Đạo Tứ Ân Hiếu Nghĩa.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 33: Quan điểm của Đảng và Nhà nước Việt Nam đối với những giá trị đạo đức, văn hóa tốt đẹp của tôn giáo là gì?',
+      answerOptions: [
+        { answerText: 'A. Bác bỏ hoàn toàn vì nó đối lập với chủ nghĩa xã hội.', isCorrect: false },
+        { answerText: 'B. Tôn trọng, khuyến khích và phát huy những giá trị văn hóa, đạo đức tốt đẹp, phù hợp với xã hội mới.', isCorrect: true },
+        { answerText: 'C. Bắt buộc mọi người dân phải học theo đạo đức tôn giáo.', isCorrect: false },
+        { answerText: 'D. Chỉ phát huy giá trị đạo đức của những tôn giáo có nguồn gốc nội sinh.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 34: Về mặt nhận thức thế giới, mối quan hệ giữa khoa học và tôn giáo mang tính chất gì?',
+      answerOptions: [
+        { answerText: 'A. Bổ sung chặt chẽ cho nhau.', isCorrect: false },
+        { answerText: 'B. Hoàn toàn đồng nhất với nhau.', isCorrect: false },
+        { answerText: 'C. Đối lập nhau.', isCorrect: true },
+        { answerText: 'D. Không có bất kỳ mối liên hệ hay khác biệt nào.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 35: Đảng ta khẳng định tín đồ của các tôn giáo đóng vai trò như thế nào trong xã hội?',
+      answerOptions: [
+        { answerText: 'A. Là lực lượng đứng ngoài công cuộc xây dựng đất nước.', isCorrect: false },
+        { answerText: 'B. Là một bộ phận quần chúng nhân dân quan trọng, lực lượng của khối đại đoàn kết toàn dân tộc.', isCorrect: true },
+        { answerText: 'C. Cần được cách ly để tránh ảnh hưởng đến tư tưởng chính trị.', isCorrect: false },
+        { answerText: 'D. Là nhóm người chỉ quan tâm đến đời sống tâm linh, không có nghĩa vụ với Nhà nước.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 36: Theo Ph.Ăngghen, tôn giáo là sự phản ánh hư ảo vào trong đầu óc con người của những sức mạnh nào?',
+      answerOptions: [
+        { answerText: 'A. Sức mạnh của tư duy và trí tuệ nhân loại.', isCorrect: false },
+        { answerText: 'B. Những sức mạnh ở bên ngoài chi phối cuộc sống hàng ngày của họ.', isCorrect: true },
+        { answerText: 'C. Sức mạnh của các đấng sáng thế có thật trong vũ trụ.', isCorrect: false },
+        { answerText: 'D. Sức mạnh của khoa học công nghệ chưa được khám phá.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 37: Mặt chính trị trong vấn đề tôn giáo phản ánh điều gì?',
+      answerOptions: [
+        { answerText: 'A. Sự khác biệt thuần túy về niềm tin và tâm linh.', isCorrect: false },
+        { answerText: 'B. Mâu thuẫn về lợi ích kinh tế, chính trị giữa các giai cấp, thế lực lợi dụng tôn giáo để chống phá.', isCorrect: true },
+        { answerText: 'C. Sự đa dạng trong văn hóa và phong tục tập quán.', isCorrect: false },
+        { answerText: 'D. Nhu cầu tìm kiếm sự bình yên trong tâm hồn của con người.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 38: Mặt tư tưởng trong vấn đề tôn giáo phản ánh điều gì?',
+      answerOptions: [
+        { answerText: 'A. Sự đối kháng giai cấp một cách gay gắt.', isCorrect: false },
+        { answerText: 'B. Sự khác biệt về nhận thức, niềm tin tín ngưỡng của quần chúng nhân dân.', isCorrect: true },
+        { answerText: 'C. Xung đột về lãnh thổ và quân sự.', isCorrect: false },
+        { answerText: 'D. Mưu đồ chính trị của giai cấp bóc lột.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 39: Một trong những nguyên tắc quan trọng của chủ nghĩa Mác - Lênin khi giải quyết vấn đề tôn giáo là phải có quan điểm nào?',
+      answerOptions: [
+        { answerText: 'A. Quan điểm lịch sử - cụ thể.', isCorrect: true },
+        { answerText: 'B. Quan điểm phi lịch sử.', isCorrect: false },
+        { answerText: 'C. Quan điểm bảo thủ.', isCorrect: false },
+        { answerText: 'D. Quan điểm chủ quan, duy ý chí.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 40: Thực chất của vấn đề tôn giáo ở nước ta hiện nay là gì?',
+      answerOptions: [
+        { answerText: 'A. Là vấn đề đấu tranh giai cấp gay gắt.', isCorrect: false },
+        { answerText: 'B. Là vấn đề công tác đối ngoại.', isCorrect: false },
+        { answerText: 'C. Là vấn đề công tác quần chúng.', isCorrect: true },
+        { answerText: 'D. Là vấn đề xung đột văn hóa.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 41: Hiện tượng các tôn giáo du nhập từ nước ngoài vào Việt Nam thường có xu hướng như thế nào?',
+      answerOptions: [
+        { answerText: 'A. Giữ nguyên bản chất gốc, bài trừ văn hóa bản địa.', isCorrect: false },
+        { answerText: 'B. Gắn bó, dung hợp với tín ngưỡng truyền thống và văn hóa dân tộc Việt Nam.', isCorrect: true },
+        { answerText: 'C. Tiêu diệt hoàn toàn các tín ngưỡng nội sinh.', isCorrect: false },
+        { answerText: 'D. Chống lại mọi phong tục, tập quán của người Việt.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 42: Tôn giáo nào có số lượng tín đồ đứng thứ hai tại Việt Nam hiện nay (sau Phật giáo)?',
+      answerOptions: [
+        { answerText: 'A. Tin Lành.', isCorrect: false },
+        { answerText: 'B. Cao Đài.', isCorrect: false },
+        { answerText: 'C. Công giáo.', isCorrect: true },
+        { answerText: 'D. Hồi giáo.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 43: Theo pháp luật Việt Nam, hành vi nào sau đây bị nghiêm cấm trong hoạt động tín ngưỡng, tôn giáo?',
+      answerOptions: [
+        { answerText: 'A. Lợi dụng hoạt động tín ngưỡng, tôn giáo để trục lợi, chia rẽ dân tộc.', isCorrect: true },
+        { answerText: 'B. Tổ chức các lễ hội tôn giáo truyền thống theo quy định.', isCorrect: false },
+        { answerText: 'C. In ấn kinh sách tôn giáo đã được cấp phép.', isCorrect: false },
+        { answerText: 'D. Khuyên răn tín đồ làm việc thiện, tránh việc ác.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 44: Ở Việt Nam, bộ phận dân cư nào chủ yếu theo đạo Hồi (Hồi giáo Bà ni và Hồi giáo Islam)?',
+      answerOptions: [
+        { answerText: 'A. Người Kinh.', isCorrect: false },
+        { answerText: 'B. Người Khmer.', isCorrect: false },
+        { answerText: 'C. Người Chăm.', isCorrect: true },
+        { answerText: 'D. Người Ba Na.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 45: Mục đích của công tác quản lý nhà nước về tôn giáo ở Việt Nam là gì?',
+      answerOptions: [
+        { answerText: 'A. Xóa bỏ hoàn toàn tôn giáo trong thời gian ngắn nhất.', isCorrect: false },
+        { answerText: 'B. Hạn chế tối đa quyền tự do tín ngưỡng của nhân dân.', isCorrect: false },
+        { answerText: 'C. Đưa hoạt động tôn giáo vào nền nếp, tuân thủ pháp luật, phát huy giá trị tích cực của tôn giáo.', isCorrect: true },
+        { answerText: 'D. Buộc các tôn giáo phải sáp nhập lại thành một tôn giáo duy nhất.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 46: Điểm khác biệt căn bản nhất giữa thế giới quan tôn giáo và thế giới quan mácxít là gì?',
+      answerOptions: [
+        { answerText: 'A. Thế giới quan tôn giáo là duy tâm, thế giới quan mácxít là duy vật biện chứng.', isCorrect: true },
+        { answerText: 'B. Cả hai đều dựa trên các chứng minh khoa học thực nghiệm.', isCorrect: false },
+        { answerText: 'C. Thế giới quan tôn giáo là duy vật, thế giới quan mácxít là duy tâm.', isCorrect: false },
+        { answerText: 'D. Không có sự khác biệt, cả hai đều hướng con người đến thực tại.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 47: Xu hướng tích cực, nổi bật trong đời sống tôn giáo ở Việt Nam hiện nay là gì?',
+      answerOptions: [
+        { answerText: 'A. Co cụm, tách biệt đời sống đạo ra khỏi đời sống xã hội.', isCorrect: false },
+        { answerText: 'B. "Đồng hành cùng dân tộc", gắn bó với sự nghiệp xây dựng và bảo vệ Tổ quốc.', isCorrect: true },
+        { answerText: 'C. Từ bỏ đức tin tôn giáo để chuyển sang xu hướng vô thần hóa hoàn toàn.', isCorrect: false },
+        { answerText: 'D. Khép kín và từ chối các hoạt động giao lưu quốc tế.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 48: Theo Mác - Lênin, việc khắc phục những hạn chế, tiêu cực của tôn giáo phải tuân theo quy luật nào?',
+      answerOptions: [
+        { answerText: 'A. Có thể thực hiện ngay lập tức bằng các mệnh lệnh hành chính nhà nước.', isCorrect: false },
+        { answerText: 'B. Phải là một quá trình lâu dài, gắn liền với sự phát triển kinh tế, văn hóa, xã hội.', isCorrect: true },
+        { answerText: 'C. Chỉ cần sử dụng sức mạnh quân sự để đàn áp.', isCorrect: false },
+        { answerText: 'D. Phụ thuộc hoàn toàn vào ý muốn chủ quan của những người lãnh đạo.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 49: Đâu KHÔNG PHẢI là một đặc điểm của tôn giáo ở Việt Nam?',
+      answerOptions: [
+        { answerText: 'A. Việt Nam là một quốc gia đa tôn giáo.', isCorrect: false },
+        { answerText: 'B. Lịch sử Việt Nam thường xuyên xảy ra các cuộc chiến tranh tôn giáo khốc liệt.', isCorrect: true },
+        { answerText: 'C. Tín đồ các tôn giáo phần lớn là nhân dân lao động.', isCorrect: false },
+        { answerText: 'D. Các tôn giáo ở Việt Nam có quan hệ quốc tế ngày càng mở rộng.', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Câu 50: Theo quan điểm của Đảng ta, công tác tôn giáo là trách nhiệm của ai?',
+      answerOptions: [
+        { answerText: 'A. Chỉ là trách nhiệm của các cơ quan quản lý nhà nước về tôn giáo.', isCorrect: false },
+        { answerText: 'B. Là trách nhiệm của cả hệ thống chính trị do Đảng lãnh đạo.', isCorrect: true },
+        { answerText: 'C. Chỉ là trách nhiệm của các chức sắc, nhà tu hành.', isCorrect: false },
+        { answerText: 'D. Là trách nhiệm riêng của lực lượng an ninh, công an.', isCorrect: false },
+      ],
+    }
   ];
 
   const QUESTION_LIMIT = 20;

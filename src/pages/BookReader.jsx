@@ -40,6 +40,13 @@ function BookReader() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Mặc định mở Sidebar: Hiện tại đóng
     const [zoomScale, setZoomScale] = useState(1); // Zoom mặc định 100%
     const [isFullscreen, setIsFullscreen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // --- LOGIC LẬT TRANG & AUTO PLAY (Giữ nguyên như cũ) ---
     const nextFlip = () => bookRef.current?.pageFlip().flipNext();
@@ -146,17 +153,17 @@ function BookReader() {
                         </button>
 
                         {/* SÁCH (Được bọc div để Zoom) */}
-                        <div style={{ transform: `scale(${zoomScale})`, transition: 'transform 0.3s ease' }}>
+                        <div style={{ transform: `scale(${isMobile ? 1 : zoomScale})`, transition: 'transform 0.3s ease' }}>
                             <HTMLFlipBook
-                                width={1100}
-                                height={800}
+                                width={isMobile ? 320 : 1100}
+                                height={isMobile ? 480 : 800}
                                 size="stretch"
-                                minWidth={600}
-                                maxWidth={1500}
-                                minHeight={400}
-                                maxHeight={1000}
+                                minWidth={isMobile ? 250 : 600}
+                                maxWidth={isMobile ? 500 : 1500}
+                                minHeight={isMobile ? 350 : 400}
+                                maxHeight={isMobile ? 800 : 1000}
                                 showCover={true}
-                                usePortrait={true}
+                                usePortrait={isMobile ? true : false}
                                 mobileScrollSupport={true}
                                 onFlip={onFlip}
                                 onInit={onInit}

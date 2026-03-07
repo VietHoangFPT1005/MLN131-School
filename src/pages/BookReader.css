@@ -194,24 +194,36 @@
 
 @media (max-width: 768px) {
   .book-viewport {
-    padding: 10px;
+    padding: 0;
   }
 
   /* Ẩn nút Next/Prev to đùng che mất chữ */
   .nav-btn {
-    font-size: 30px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.5);
+    font-size: 24px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.7);
     /* Thêm nền mờ để dễ nhìn nút */
     border-radius: 50%;
+    z-index: 50;
   }
 
   .nav-prev {
-    left: 5px;
+    left: 2px;
   }
 
   .nav-next {
-    right: 5px;
+    right: 2px;
+  }
+  
+  .bottom-toolbar {
+    height: 50px;
+    gap: 8px;
+    padding: 0 5px;
+  }
+  
+  .tool-btn {
+    font-size: 16px;
+    padding: 8px;
   }
 
   /* Ẩn luôn sidebar trên mobile cho đỡ rối */
@@ -226,5 +238,6 @@
     z-index: 100;
     width: 100%;
     height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
   }
 }

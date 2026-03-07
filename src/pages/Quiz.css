@@ -43,13 +43,13 @@
   border-radius: 10px;
   margin-bottom: 40px;
   position: relative;
-  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .progress-icon {
   position: absolute;
   top: -20px;
-  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
   transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translateX(-50%);
   z-index: 2;
@@ -150,7 +150,8 @@
 }
 
 /* --- MÀN HÌNH WELCOME & KẾT QUẢ --- */
-.welcome-section, .score-section {
+.welcome-section,
+.score-section {
   text-align: center;
   color: #333;
 }
@@ -164,8 +165,15 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* --- BUTTONS --- */
@@ -177,7 +185,10 @@
   margin-top: 10px;
 }
 
-.btn-start, .btn-restart, .btn-home, .btn-leaderboard {
+.btn-start,
+.btn-restart,
+.btn-home,
+.btn-leaderboard {
   border: none;
   padding: 15px 30px;
   color: white;
@@ -212,7 +223,10 @@
   box-shadow: 0 5px 15px rgba(230, 168, 23, 0.4);
 }
 
-.btn-start:hover, .btn-restart:hover, .btn-home:hover, .btn-leaderboard:hover {
+.btn-start:hover,
+.btn-restart:hover,
+.btn-home:hover,
+.btn-leaderboard:hover {
   transform: scale(1.05);
 }
 
@@ -368,7 +382,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Empty State */
@@ -443,9 +459,17 @@
   font-size: 22px;
 }
 
-.rank-icon.gold { color: #ffd700; }
-.rank-icon.silver { color: #c0c0c0; }
-.rank-icon.bronze { color: #cd7f32; }
+.rank-icon.gold {
+  color: #ffd700;
+}
+
+.rank-icon.silver {
+  color: #c0c0c0;
+}
+
+.rank-icon.bronze {
+  color: #cd7f32;
+}
 
 .rank-number {
   width: 28px;
@@ -491,8 +515,14 @@
   .answer-section {
     grid-template-columns: 1fr;
   }
-  .question-text { font-size: 1.1rem; }
-  .dove-moving { font-size: 22px; }
+
+  .question-text {
+    font-size: 1.1rem;
+  }
+
+  .dove-moving {
+    font-size: 22px;
+  }
 
   .lb-row {
     grid-template-columns: 45px 1fr 70px 60px;
@@ -508,7 +538,10 @@
     width: 200px;
   }
 
-  .btn-start, .btn-restart, .btn-home, .btn-leaderboard {
+  .btn-start,
+  .btn-restart,
+  .btn-home,
+  .btn-leaderboard {
     padding: 12px 20px;
     font-size: 0.95rem;
   }
@@ -524,7 +557,8 @@
   }
 
   .lb-lives {
-    display: none; /* Ẩn cột mạng trên mobile nhỏ */
+    display: none;
+    /* Ẩn cột mạng trên mobile nhỏ */
   }
 
   .lb-header-row .lb-lives {
