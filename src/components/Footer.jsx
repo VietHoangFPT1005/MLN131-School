@@ -35,13 +35,13 @@ const Footer = () => {
           <h3>Thông tin nhóm thực hiện</h3>
           <ul className="footer-info">
             <li><span>Môn học:</span>Triết học Mác-Lênin (MLN131)</li>
-            <li><span>Nhóm thực hiện: Nhóm 2</span></li>
+            <li><span>Nhóm thực hiện: Nhóm 07</span></li>
             <li>
               <ul>
                 <li>Nguyễn Viết Hoàng - SE183852</li>
-                <li>Nguyễn Văn Quốc Khánh</li>
-                <li>Đỗ Đức Nhật Anh</li>
-                <li>Nguyễn Công Huy</li>
+                <li>Nguyễn Văn Quốc Khánh - SE172837</li>
+                <li>Đỗ Đức Nhật Anh - SE183583</li>
+                <li>Nguyễn Công Huy - SE170086</li>
               </ul>
             </li>
           </ul>
