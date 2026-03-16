@@ -29,10 +29,14 @@
     margin-top: 10px;
 }
 
+/* page-text chiếm hết không gian còn lại và dùng flex để chứa các trang JSX */
 .page-text {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
     line-height: 1.6;
-    text-align: justify;
 }
 
 .page-footer {

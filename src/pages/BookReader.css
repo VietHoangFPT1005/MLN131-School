@@ -59,6 +59,20 @@
   background-color: #f0f0f0;
 }
 
+.toc-item-active {
+  background-color: #fdecea;
+  color: #8B1A1A;
+  font-weight: 600;
+  border-left: 3px solid #8B1A1A;
+}
+
+.toc-num {
+  color: #8B1A1A;
+  font-weight: bold;
+  margin-right: 4px;
+  font-size: 12px;
+}
+
 /* --- MAIN CONTENT --- */
 .main-content {
   flex-grow: 1;

@@ -10,37 +10,55 @@ import {
     FaSearchPlus, FaSearchMinus, FaList, FaExpand, FaCompress, FaTimes
 } from 'react-icons/fa';
 
-// Import pages images
-const pagesImage = [
-    '/img/1.jpg',
-    '/img/2.jpg',
-    '/img/3.jpg',
-    '/img/4.jpg',
-    '/img/5.jpg',
-    '/img/6.jpg',
-    '/img/7.jpg',
-    '/img/8.jpg',
-    '/img/9.jpg',
-    '/img/10.jpg',
-    '/img/11.jpg',
-    '/img/12.jpg',
-    '/img/13.jpg',
+/*
+  Cấu trúc sách (16 trang):
+  0  - 1.jpg  : Trang Bìa
+  1  - 2.jpg  : Quan điểm tổng quan MLN về Tôn giáo
+  2  - 3.jpg  : Mục tiêu: Hạnh phúc của Nhân dân
+  3  - 4.jpg  : Bảo đảm Quyền Tự do Tín ngưỡng
+  4  - 5.jpg  : Phát huy Giá trị Tốt đẹp của Tôn giáo
+  5  - 6.jpg  : Sống Tốt Đời, Đẹp Đạo (tóm tắt 3 hoạt động)
+  6  - 7.jpg  : Tôn giáo Đồng hành cùng Dân tộc
+  7  - 8.jpg  : Tôn giáo Xây dựng Nông thôn Mới
+  8  - 9.jpg  : Tôn giáo Bảo vệ Môi trường
+  9  - 10.jpg : Đặc điểm Tôn giáo ở Việt Nam
+  10 - 11.jpg : Đoàn kết & Cảnh giác với Lợi dụng Tôn giáo
+  11 - 12.jpg : Vận dụng Thực tiễn — Trách nhiệm Thế hệ Trẻ
+  12 - 13.jpg : Lời kết — Đại Đoàn kết Toàn Dân tộc
+  13 - 14.jpg : Giá trị Đạo đức, Nhân văn của Tôn giáo
+  14 - 15.jpg : Thách thức & Giải pháp Tôn giáo Thời kỳ Mới
+  15 - 16.jpg : Tổng kết Chương VI — Vấn đề Tôn giáo
+*/
+
+const pages = [
+    { type: 'image', src: '/img/1.jpg',  label: 'Trang Bìa' },
+    { type: 'image', src: '/img/2.jpg',  label: 'Quan điểm MLN về Tôn giáo' },
+    { type: 'image', src: '/img/3.jpg',  label: 'Mục tiêu: Hạnh phúc Nhân dân' },
+    { type: 'image', src: '/img/4.jpg',  label: 'Bảo đảm Quyền Tự do Tín ngưỡng' },
+    { type: 'image', src: '/img/5.jpg',  label: 'Phát huy Giá trị Tốt đẹp Tôn giáo' },
+    { type: 'image', src: '/img/6.jpg',  label: 'Sống Tốt Đời, Đẹp Đạo' },
+    { type: 'image', src: '/img/7.jpg',  label: 'Tôn giáo Đồng hành Dân tộc' },
+    { type: 'image', src: '/img/8.jpg',  label: 'Tôn giáo Xây dựng Nông thôn Mới' },
+    { type: 'image', src: '/img/9.jpg',  label: 'Tôn giáo Bảo vệ Môi trường' },
+    { type: 'image', src: '/img/10.jpg', label: 'Đặc điểm Tôn giáo ở Việt Nam' },
+    { type: 'image', src: '/img/11.jpg', label: 'Đoàn kết & Cảnh giác Lợi dụng TG' },
+    { type: 'image', src: '/img/12.jpg', label: 'Trách nhiệm Thế hệ Trẻ' },
+    { type: 'image', src: '/img/13.jpg', label: 'Lời kết: Đại Đoàn kết Dân tộc' },
+    { type: 'image', src: '/img/14.jpg', label: 'Giá trị Đạo đức, Nhân văn Tôn giáo' },
+    { type: 'image', src: '/img/15.jpg', label: 'Thách thức & Giải pháp Tôn giáo' },
+    { type: 'image', src: '/img/16.jpg', label: 'Tổng kết Chương VI' },
 ];
 
 function BookReader() {
     const bookRef = useRef();
-
-    // Navigation
     const navigate = useNavigate();
 
-    // States
     const [currentPage, setCurrentPage] = useState(0);
-    const [totalPage, setTotalPage] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Mặc định mở Sidebar: Hiện tại đóng
-    const [zoomScale, setZoomScale] = useState(1); // Zoom mặc định 100%
+    const [isPlaying, setIsPlaying]     = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [zoomScale, setZoomScale]     = useState(1);
     const [isFullscreen, setIsFullscreen] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isMobile, setIsMobile]       = useState(window.innerWidth <= 768);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -48,7 +66,7 @@ function BookReader() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // --- LOGIC LẬT TRANG & AUTO PLAY (Giữ nguyên như cũ) ---
+    // --- LẬT TRANG & AUTO PLAY ---
     const nextFlip = () => bookRef.current?.pageFlip().flipNext();
     const prevFlip = () => bookRef.current?.pageFlip().flipPrev();
 
@@ -62,26 +80,18 @@ function BookReader() {
         return () => clearInterval(interval);
     }, [isPlaying]);
 
-    const onFlip = (e) => {
-        setCurrentPage(e.data);
-    };
+    const onFlip = (e) => setCurrentPage(e.data);
 
-    const onInit = (e) => {
-        setTotalPage(bookRef.current.pageFlip().getPageCount());
-    }
-
-    // --- TÍNH NĂNG MỚI ---
-
-    // 1. Zoom In/Out
+    // --- ZOOM ---
     const handleZoom = (direction) => {
         setZoomScale(prev => {
-            if (direction === 'in') return Math.min(prev + 0.2, 2.0); // Max zoom 2x
-            if (direction === 'out') return Math.max(prev - 0.2, 0.6); // Min zoom 0.6x
+            if (direction === 'in')  return Math.min(prev + 0.2, 2.0);
+            if (direction === 'out') return Math.max(prev - 0.2, 0.6);
             return prev;
         });
     };
 
-    // 2. Fullscreen
+    // --- FULLSCREEN ---
     const toggleFullscreen = () => {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
@@ -94,11 +104,10 @@ function BookReader() {
         }
     };
 
-    // 3. Chuyển đến trang cụ thể (từ mục lục)
+    // --- CHUYỂN TRANG TỪ MỤC LỤC ---
     const goToPage = (pageIndex) => {
-        if (bookRef.current) {
-            bookRef.current.pageFlip().flip(pageIndex);
-        }
+        if (bookRef.current) bookRef.current.pageFlip().flip(pageIndex);
+        setIsSidebarOpen(false);
     };
 
     return (
@@ -108,34 +117,27 @@ function BookReader() {
                 {/* SIDEBAR - MỤC LỤC */}
                 <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
                     <div className="sidebar-header">
-                        <span>Table of Contents</span>
+                        <span>Mục Lục</span>
                         <FaTimes style={{ cursor: 'pointer' }} onClick={() => setIsSidebarOpen(false)} />
                     </div>
                     <ul className="toc-list">
-                        {/* Giả lập mục lục */}
-                        <li className="toc-item" onClick={() => goToPage(0)}>Trang Bìa</li>
-                        <li className="toc-item" onClick={() => goToPage(1)}>BẢN CHẤT VÀ NGUỒN GỐC TÔN GIÁO</li>
-                        <li className="toc-item" onClick={() => goToPage(2)}>TÍNH CHẤT CỦA TÔN GIÁO</li>
-                        <li className="toc-item" onClick={() => goToPage(3)}>NGUYÊN TẮC GIẢI QUYẾT VẤN ĐỀ TÔN GIÁO</li>
-                        <li className="toc-item" onClick={() => goToPage(4)}>QUYỀN TỰ DO TÍN NGƯỠNG</li>
-                        <li className="toc-item" onClick={() => goToPage(5)}>ĐA DẠNG TÔN GIÁO Ở VIỆT NAM</li>
-                        <li className="toc-item" onClick={() => goToPage(6)}>SỐNG TỐT ĐỜI, ĐẸP ĐẠO</li>
-                        <li className="toc-item" onClick={() => goToPage(7)}>TÔN GIÁO TRONG HOẠT ĐỘNG TỪ THIỆN</li>
-                        <li className="toc-item" onClick={() => goToPage(8)}>TÔN GIÁO BẢO VỆ MÔI TRƯỜNG</li>
-                        <li className="toc-item" onClick={() => goToPage(9)}>PHONG TRÀO THI ĐUA YÊU NƯỚC</li>
-                        <li className="toc-item" onClick={() => goToPage(10)}>PHÁT HUY GIÁ TRỊ TỐT ĐẸP CỦA TÔN GIÁO</li>
-                        <li className="toc-item" onClick={() => goToPage(11)}>Trang Kết Thúc</li>
+                        {pages.map((p, i) => (
+                            <li
+                                key={i}
+                                className={`toc-item ${currentPage === i ? 'toc-item-active' : ''}`}
+                                onClick={() => goToPage(i)}
+                            >
+                                <span className="toc-num">{i + 1}.</span> {p.label}
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 {/* KHU VỰC CHÍNH */}
                 <div className="main-content">
-                    {/* Header hiển thị số trang */}
+                    {/* Top bar */}
                     <div className="top-bar">
-                        {/* Số trang hiển thị ở giữa */}
-                        <span className="page-counter">{currentPage + 1} / {totalPage}</span>
-
-                        {/* 3. Thêm nút Thoát ở đây */}
+                        <span className="page-counter">{currentPage + 1} / {pages.length}</span>
                         <button
                             className="btn-exit"
                             onClick={() => navigate('/')}
@@ -145,14 +147,12 @@ function BookReader() {
                         </button>
                     </div>
 
-                    {/* Khu vực chứa sách + Mũi tên điều hướng */}
+                    {/* Sách + mũi tên */}
                     <div className="book-viewport">
-                        {/* Nút Previous lớn bên trái */}
                         <button className="nav-btn nav-prev" onClick={prevFlip}>
                             <FaChevronLeft />
                         </button>
 
-                        {/* SÁCH (Được bọc div để Zoom) */}
                         <div style={{ transform: `scale(${isMobile ? 1 : zoomScale})`, transition: 'transform 0.3s ease' }}>
                             <HTMLFlipBook
                                 width={isMobile ? 320 : 1100}
@@ -163,20 +163,18 @@ function BookReader() {
                                 minHeight={isMobile ? 350 : 400}
                                 maxHeight={isMobile ? 800 : 1000}
                                 showCover={true}
-                                usePortrait={isMobile ? true : false}
+                                usePortrait={isMobile}
                                 mobileScrollSupport={true}
                                 onFlip={onFlip}
-                                onInit={onInit}
                                 ref={bookRef}
                                 className="my-book"
                             >
-                                {pagesImage.map((path, index) => (
-                                    <Page key={index} number={index + 1} image={path} />
+                                {pages.map((p, i) => (
+                                    <Page key={i} number={i + 1} image={p.src} />
                                 ))}
                             </HTMLFlipBook>
                         </div>
 
-                        {/* Nút Next lớn bên phải */}
                         <button className="nav-btn nav-next" onClick={nextFlip}>
                             <FaChevronRight />
                         </button>
@@ -184,30 +182,24 @@ function BookReader() {
 
                     {/* BOTTOM TOOLBAR */}
                     <div className="bottom-toolbar">
-                        {/* Nút Zoom */}
-                        <button className="tool-btn" onClick={() => handleZoom('out')}><FaSearchMinus /></button>
-                        <button className="tool-btn" onClick={() => handleZoom('in')}><FaSearchPlus /></button>
+                        <button className="tool-btn" onClick={() => handleZoom('out')} title="Thu nhỏ"><FaSearchMinus /></button>
+                        <button className="tool-btn" onClick={() => handleZoom('in')}  title="Phóng to"><FaSearchPlus /></button>
 
                         <div className="separator"></div>
 
-                        {/* Nút Mục lục */}
-                        <button className="tool-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+                        <button className="tool-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)} title="Mục lục">
                             <FaList />
                         </button>
-
-                        {/* Nút Auto Play */}
-                        <button className={`tool-btn ${isPlaying ? 'active' : ''}`} onClick={() => setIsPlaying(!isPlaying)}>
+                        <button className={`tool-btn ${isPlaying ? 'active' : ''}`} onClick={() => setIsPlaying(!isPlaying)} title="Tự động lật trang">
                             {isPlaying ? <FaPause /> : <FaPlay />}
                         </button>
 
                         <div className="separator"></div>
 
-                        {/* Nút Fullscreen */}
-                        <button className="tool-btn" onClick={toggleFullscreen}>
+                        <button className="tool-btn" onClick={toggleFullscreen} title="Toàn màn hình">
                             {isFullscreen ? <FaCompress /> : <FaExpand />}
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
